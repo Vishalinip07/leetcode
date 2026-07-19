@@ -1,0 +1,7 @@
+-- Last updated: 19/07/2026, 21:07:14
+# Write your MySQL query statement below
+SELECT S.score ,COUNT(S2.SCORE) as `rank` FROM SCORES S,
+(SELECT DISTINCT SCORE FROM SCORES)  S2
+WHERE S.SCORE<=S2.SCORE 
+GROUP BY S.ID 
+ORDER BY S.SCORE DESC;
